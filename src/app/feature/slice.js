@@ -31,7 +31,7 @@ export const login_user = createAsyncThunk(
   "user/login",
   async (credentials, { rejectWithValue }) => {
     try {
-      const response = await axios.post(`${BASE_URL}/auth/login`, credentials, {
+      const response = await axios.post(`${BASE_URL}/auth/admin/login`, credentials, {
         headers: {
           "Content-Type": "application/json",
         },

@@ -85,7 +85,7 @@ export default function UserTable() {
              <FaChevronLeft/>  Previous
             
           </button>
-          <div className="px-2 py-2 "> <span>{currentPage}</span> , {totalPages}</div>
+          <div className="px-2 py-2"> <span className="  ">{currentPage}</span> , {totalPages}</div>
           <button
             onClick={() => setCurrentPage((prev) => Math.min(prev + 1, totalPages))}
             disabled={currentPage === totalPages}

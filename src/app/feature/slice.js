@@ -42,6 +42,22 @@ export const login_user = createAsyncThunk(
     }
   }
 );
+export const admin_login_user = createAsyncThunk(
+  "user/login",
+  async (credentials, { rejectWithValue }) => {
+    try {
+      const response = await axios.post(`${BASE_URL}/auth/admin/login`, credentials, {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+      return response.data;
+    } catch (error) {
+      return rejectWithValue(error.response?.data || "An error occurred");
+    }
+  }
+);
+
 
 const userSlice = createSlice({
   name: "user",
